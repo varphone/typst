@@ -35,6 +35,9 @@ static ARGS: Lazy<CliArguments> = Lazy::new(CliArguments::parse);
 
 /// Entry point.
 fn main() -> ExitCode {
+    #[cfg(feature = "dotenv")]
+    dotenv::dotenv().ok();
+
     let res = dispatch();
 
     if let Err(msg) = res {

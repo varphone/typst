@@ -31,6 +31,7 @@ clap = { workspace = true }
 codespan-reporting = { workspace = true }
 comemo = { workspace = true }
 dirs = { workspace = true }
+dotenv = { workspace = true, optional = true }
 ecow = { workspace = true }
 fs_extra = { workspace = true }
 native-tls = { workspace = true }
@@ -63,6 +64,8 @@ semver = { workspace = true }
 
 [features]
 default = ["embed-fonts"]
+
+dotenv = ["dep:dotenv"]
 
 # Embeds some fonts into the binary, see typst-kit
 embed-fonts = ["typst-kit/embed-fonts"]
